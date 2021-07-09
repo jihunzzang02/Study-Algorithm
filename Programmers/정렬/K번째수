@@ -1,0 +1,16 @@
+#내답
+
+def solution(array, commands):
+    answer = []
+    for elem in commands:
+        a = elem[0] 
+        b = elem[1]
+        c = elem[2]
+        answer.append(sorted(array[a-1:b])[c-1])
+    return answer
+    
+    
+    
+    #현명한 답
+    def solution(array, commands):
+      return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
