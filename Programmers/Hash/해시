@@ -1,0 +1,27 @@
+## 내답
+
+def solution(clothes):
+    dic={}
+    for i in range(len(clothes)):
+        if clothes[i][1] in dic:
+            dic[clothes[i][1]]=dic[clothes[i][1]]+1
+        else:
+            dic[clothes[i][1]]=1
+    val=list(dic.values())
+    
+    x=1
+    for i in range(len(val)):
+        x=x*(int(val[i])+1)
+    x-=1
+    answer = x
+
+    return answer
+    
+    
+    ##배울 답
+    def solution(clothes):
+    from collections import Counter
+    from functools import reduce
+    cnt = Counter([kind for name, kind in clothes])
+    answer = reduce(lambda x, y: x*(y+1), cnt.values(), 1) - 1
+    return answer
