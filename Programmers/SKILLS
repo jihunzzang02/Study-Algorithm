@@ -1,0 +1,41 @@
+## Counter사용방법 
+## 컨테이너에 동일한 값의 자료가 몇개인지를 파악하는데 사용하는 객체
+from collections
+
+lst = ['aa', 'cc', 'dd', 'aa', 'bb', 'ee']
+print(collections.Counter(lst))
+
+'''
+결과
+Counter({'aa': 2, 'cc': 1, 'dd': 1, 'bb': 1, 'ee': 1})
+'''
+##  collections.Counter(participant) - collections.Counter(completion) 위와 같이 빼기도 가능
+
+
+
+
+
+## hash() 함수방법
+hash('123')
+>>> 1710988942867749935
+
+
+## zip사용방법
+>>> numbers = (1, 2, 3)
+>>> letters = ("A", "B", "C")
+>>> pairs = list(zip(numbers, letters))
+>>> pairs
+[(1, 'A'), (2, 'B'), (3, 'C')]
+
+>>> keys = [1, 2, 3]
+>>> values = ["A", "B", "C"]
+>>> dict(zip(keys, values))
+{1: 'A', 2: 'B', 3: 'C'}
+
+>>> dict(zip(["year", "month", "date"], [2001, 1, 31]))
+{'year': 2001, 'month': 1, 'date': 31}
+
+>>> numbers = ["1", "2", "3"]
+>>> letters = ["A"]
+>>> list(zip(numbers, letters))
+[('1', 'A')]
