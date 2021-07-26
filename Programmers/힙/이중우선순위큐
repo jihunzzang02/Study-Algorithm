@@ -1,0 +1,26 @@
+import heapq
+def solution(operations):
+
+    temp=[]
+    for x in operations:
+
+        if x.split()[0] == "I":   
+            heapq.heappush(temp,int(x.split()[1]))    
+        elif x == 'D -1':
+            if temp:
+                heapq.heappop(temp)
+        else:
+            if temp:
+                temp_2=[]
+                for i in temp:
+                    heapq.heappush(temp_2,(-i,i))
+                temp.remove(temp_2[0][1])
+                heapq.heapify(temp)
+    if len(temp) == 0:
+        return [0,0]
+
+    else:
+        answer = []
+        answer.append(max(temp))
+        answer.append(temp[0])      
+        return answer
