@@ -1,0 +1,28 @@
+import heapq
+import math
+
+def solution(jobs):
+    aaa = len(jobs)
+    heapq.heapify(jobs)
+    answer = jobs[0][1]
+    now = jobs[0][1] + jobs[0][0]
+    heapq.heappop(jobs)[1]
+
+    temp = [] 
+    while temp or jobs:
+        for x in range(len(jobs)):
+            if jobs[0][0]<=now:
+                heapq.heappush(temp,jobs[0][1])
+                answer += now - jobs[0][0]
+                heapq.heappop(jobs)
+            else:
+                break
+
+        if len(temp)==0:
+            now = jobs[0][0]
+        else:
+            answer += temp[0] * len(temp)
+            now = now + temp[0]
+            heapq.heappop(temp)
+
+    return math.floor(answer / aaa)
