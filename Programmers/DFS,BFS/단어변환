@@ -1,0 +1,34 @@
+from collections import deque
+
+def compare(a,b):
+    count = 0
+    for i in range(len(a)):
+        if a[i] != b[i]:
+            count +=1
+    if count != 1:
+        return 0
+    else: 
+        return 1
+
+
+def solution(begin, target, words):
+    if target not in words:
+        return 0
+    dic={begin:0}
+    deq= deque()
+    deq.append(begin)
+
+
+    while deq:
+        x = deq.popleft()
+
+        for i in words:
+            if compare(x,i) == 1:
+
+                deq.append(i)
+                dic[i]=dic[x]+1
+                words.remove(i)
+
+        if target in deq:
+            break
+    return dic[target]
