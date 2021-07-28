@@ -5,11 +5,19 @@ from collections
 lst = ['aa', 'cc', 'dd', 'aa', 'bb', 'ee']
 print(collections.Counter(lst))
 
+collections.Counter(lst).most_commons()
+하면 정렬된 채로 나옴
+
+
 '''
 결과
 Counter({'aa': 2, 'cc': 1, 'dd': 1, 'bb': 1, 'ee': 1})
 '''
 ##  collections.Counter(participant) - collections.Counter(completion) 위와 같이 빼기도 가능
+
+
+
+
 
 
 
