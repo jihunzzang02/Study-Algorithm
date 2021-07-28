@@ -18,6 +18,25 @@ Counter({'aa': 2, 'cc': 1, 'dd': 1, 'bb': 1, 'ee': 1})
 
 
 
+## defaultdict 사용법
+from collections import defaultdict
+temp = defaultdic(int)
+하면 디폴트값이 int인 딕셔너리 생성
+temp['x'] 선언할 시
+자동으로 0이 지정됨
+{'x' : 0}
+
+temp = defaultdic(list)
+temp = defaultdic(set)
+모두 사용가능
+
+# 예시
+letters = 'dongdongfather'
+letters_dict = defaultdict(int)
+for k in letters:
+    letters_dict[k]+=1
+
+letters_dict = {'d':2, 'o':2, 'n':2 ....... 이런식으로 나옴
 
 
 
