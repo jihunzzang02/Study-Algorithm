@@ -1,18 +1,14 @@
 ## Counter사용방법 
 ## 컨테이너에 동일한 값의 자료가 몇개인지를 파악하는데 사용하는 객체
 from collections
-
 lst = ['aa', 'cc', 'dd', 'aa', 'bb', 'ee']
 print(collections.Counter(lst))
-
-collections.Counter(lst).most_commons()
-하면 정렬된 채로 나옴
-
-
 '''
 결과
 Counter({'aa': 2, 'cc': 1, 'dd': 1, 'bb': 1, 'ee': 1})
 '''
+collections.Counter(lst).most_commons()
+하면 정렬된 채로 나옴
 ##  collections.Counter(participant) - collections.Counter(completion) 위와 같이 빼기도 가능
 
 
@@ -69,8 +65,6 @@ hash('123')
 
 
 
-
-
 ## bisect  정렬된 순서를 유지하면서 리스트에 x를 삽입할 인덱스 반환
 bisect_lect(배열명,원소) >>> 삽입할 가장 왼쪽 인덱스 반환
 bisect_right(배열명,원소) >>> 삽입할 가장 오른쪽 인덱스 반환
@@ -80,3 +74,14 @@ a= [1,2,4,4,8]
 x=4
 print(bisect_left(a,x))    >>>  2
 print(bisect_right(a,x))   >>>  4
+
+
+
+
+## 아스키코드 변환
+문자를 아스키코드로
+ord('A')  >>>  65
+ord('Z')  >>>  91
+
+아스키코드를 문자로
+chr(65)   >>> 'A'
