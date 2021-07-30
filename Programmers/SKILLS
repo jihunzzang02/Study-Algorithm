@@ -1,14 +1,16 @@
 ## Counter사용방법 
 ## 컨테이너에 동일한 값의 자료가 몇개인지를 파악하는데 사용하는 객체
-from collections
+from collections import Counter
 lst = ['aa', 'cc', 'dd', 'aa', 'bb', 'ee']
 print(collections.Counter(lst))
 '''
 결과
 Counter({'aa': 2, 'cc': 1, 'dd': 1, 'bb': 1, 'ee': 1})
 '''
-collections.Counter(lst).most_commons()
+collections.Counter(lst).most_common()
 하면 정렬된 채로 나옴
+collections.Counter(lst).most_common(n=2)
+하면 정렬된 채로 2개만 나옴
 ##  collections.Counter(participant) - collections.Counter(completion) 위와 같이 빼기도 가능
 
 
