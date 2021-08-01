@@ -11,6 +11,8 @@ collections.Counter(lst).most_common()
 하면 정렬된 채로 나옴
 collections.Counter(lst).most_common(n=2)
 하면 정렬된 채로 2개만 나옴
+
+차집합구할때 
 ##  collections.Counter(participant) - collections.Counter(completion) 위와 같이 빼기도 가능
 
 
