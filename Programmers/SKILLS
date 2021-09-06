@@ -82,14 +82,14 @@ x = [[0]*4 for _ in range(3)]
 
 ## defaultdict 사용법
 from collections import defaultdict
-temp = defaultdic(int)
+temp = defaultdict(int)
 하면 디폴트값이 int인 딕셔너리 생성
 temp['x'] 선언할 시
 자동으로 0이 지정됨
 {'x' : 0} 
 
-temp = defaultdic(list)
-temp = defaultdic(set)
+temp = defaultdict(list)
+temp = defaultdict(set)
 모두 사용가능
 
 # 예시
@@ -164,3 +164,7 @@ re.findall('\d+',s)
 re.sub('[^+-*],'','구0ㄹ1380ㄱ+*$*@_!-')
 >>>+**-
 #################################################################################
+
+
+
+
