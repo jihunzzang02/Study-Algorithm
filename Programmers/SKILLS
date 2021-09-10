@@ -327,3 +327,47 @@ print(heap_sort([4, 1, 7, 3, 8, 5]))
 >>> [(-8, 8), (-7, 7), (-5, 5), (-1, 1), (-3, 3), (-4, 4)]
 
 
+
+#################################################################################
+다익스트라 코드
+우선 graph를 만들어야함
+graph[[],[1번 노드의 [n노드,n노드로의 비용] 이런 형식으로 들어가야함],[],[],[],[]]
+
+ex 
+[[],
+ [[4, 10], [3, 41], [5, 24], [6, 25]],
+ [[4, 66], [3, 22]],
+ [[5, 24], [1, 41], [2, 22]],
+ [[1, 10], [6, 50], [2, 66]],
+ [[3, 24], [6, 2], [1, 24]],
+ [[5, 2], [4, 50], [1, 25]]]
+ 
+ 0은 비워두고 
+ 1번 노드는 4번으로 10비용, 3번으로 41비용, 5번으로 24비용, 6번으로 25비용 이런식으로
+ 
+ s노드에서 출발해서 e노드까지의 최소비용
+ def dij(s,e):
+    global graph, length
+    visit=[1e9 for _ in range(n+1)]
+    visit[s]=0
+    
+    heap=[[0,s]]
+    heapq.heapify(heap)
+    
+    while heap:
+        cost, node= heapq.heappop(heap)
+        
+        if cost>visit[node]:
+            continue
+        
+        for i in graph[node]:
+            new_node, new_cost=i[0],i[1]
+            
+            new_cost = new_cost + cost
+            
+            if new_cost < visit[new_node]:
+                visit[new_node] = new_cost
+                heapq.heappush(heap,[new_cost,new_node])
+    return visit[e]
+ 
+ 
