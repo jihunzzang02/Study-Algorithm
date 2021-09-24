@@ -1,0 +1,14 @@
+트리구조인지 알아내는 코드
+
+def bfs(x):
+    isTree = True
+    q=[x]
+    while q:
+        now = q.pop(0)
+        if visited[now] == 1:
+            is Tree = False
+       visited[now]=1
+       for j in graph[now]:
+           if visited[j] == 0:
+               q.append(j)
+   return is Tree
